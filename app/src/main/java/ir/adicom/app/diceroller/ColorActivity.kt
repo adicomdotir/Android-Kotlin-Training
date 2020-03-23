@@ -8,9 +8,9 @@ import android.widget.TextView
 
 class ColorActivity : AppCompatActivity() {
 
-    lateinit var boxThreeText: TextView
-    lateinit var boxFourText: TextView
-    lateinit var boxFiveText: TextView
+    private lateinit var boxThreeText: TextView
+    private lateinit var boxFourText: TextView
+    private lateinit var boxFiveText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
