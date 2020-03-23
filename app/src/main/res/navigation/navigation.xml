@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="ir.adicom.app.diceroller.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="ir.adicom.app.diceroller.GameFragment"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment2"
+            app:destination="@id/gameWonFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment22"
+            app:destination="@id/gameOverFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment2"
+        android:name="ir.adicom.app.diceroller.GameOverFragment"
+        android:label="GameOverFragment" />
+    <fragment
+        android:id="@+id/gameWonFragment"
+        android:name="ir.adicom.app.diceroller.GameWonFragment"
+        android:label="GameWonFragment" />
+</navigation>

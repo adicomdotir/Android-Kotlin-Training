@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import ir.adicom.app.diceroller.databinding.ActivityTriviaBinding
+import ir.adicom.app.diceroller.databinding.FragmentTitleBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,8 +43,11 @@ class TitleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: ActivityTriviaBinding = DataBindingUtil.inflate(inflater,
+        val binding: FragmentTitleBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_title, container, false)
+        binding.playButton.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+        }
         return binding.root
     }
 
@@ -56,7 +61,7 @@ class TitleFragment : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
 
